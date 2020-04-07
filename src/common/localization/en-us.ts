@@ -124,9 +124,9 @@ export const english: IAppStrings = {
         backEndNotAvailable: "Checkbox feature will work in future version of Form Recognizer service, please stay tuned.",
     },
     predict: {
-        title: "Predict",
+        title: "Analyze",
         uploadFile: "Upload file",
-        inProgress: "Prediction in progress...",
+        inProgress: "Analysis in progress...",
         downloadScript: "Use script",
     },
     projectMetrics: {

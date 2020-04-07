@@ -12,7 +12,7 @@ Current Features of Labeling Tool: (you can view a short demo [here](https://you
 
 * **Label** forms in PDF, JPEG or TIFF formats. 
 * **Train** model with labeled data through [Form Recognizer](https://docs.microsoft.com/en-us/azure/cognitive-services/form-recognizer/)
-* **Predict** a single form with the trained model, to extract key/value predictions for the form. 
+* **Analyze** a single form with the trained model, to extract key/value analyses for the form. 
 
 ## Getting Started
 
@@ -123,7 +123,7 @@ You can specify tag type and format with tag contextual menu. The type and forma
 
 Click the Train icon on the left pane to open the Training page. Then click the **Train** button to begin training the model. Once the training process completes, you'll see the following information:
 
-* **Model ID** - The ID of the model that was created and trained. Each training call creates a new model with its own ID. Copy this string to a secure location; you'll need it if you want to do prediction calls through the REST API.
+* **Model ID** - The ID of the model that was created and trained. Each training call creates a new model with its own ID. Copy this string to a secure location; you'll need it if you want to do analysis calls through the REST API.
 * **Average Accuracy** - The model's average accuracy. You can improve model accuracy by labeling additional forms and training again to create a new model. We recommend starting by labeling five forms and adding more forms as needed.
 * The list of tags, and the estimated accuracy per tag.
 
@@ -135,7 +135,7 @@ Tip: You can also run the training process with a REST API call. To learn how to
 
 #### Analyze a form ####
 
-Click on the Predict icon on the left to test your model. Upload a form document that you haven't used in the training process. Then click the **Predict** button on the right to get key/value predictions for the form. The tool will apply tags in bounding boxes and will report the confidence of each tag.
+Click on the Analyze icon on the left to test your model. Upload a form document that you haven't used in the training process. Then click the **Analyze** button on the right to get key/value analyses for the form. The tool will apply tags in bounding boxes and will report the confidence of each tag.
 
 ![alt text](docs/images/analyze-form.png "Analyze Form")
 
