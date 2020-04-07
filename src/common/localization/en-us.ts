@@ -125,7 +125,7 @@ export const english: IAppStrings = {
     },
     predict: {
         title: "Analyze",
-        uploadFile: "Upload file",
+        uploadFile: "Upload file and run analysis",
         inProgress: "Analysis in progress...",
         downloadScript: "Use script",
     },

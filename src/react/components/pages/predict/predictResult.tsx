@@ -5,7 +5,7 @@ import React from "react";
 import { ITag } from "../../../../models/applicationState";
 import "./predictResult.scss";
 import { getPrimaryGreenTheme } from "../../../../common/themes";
-import { PrimaryButton } from "office-ui-fabric-react";
+import { PrimaryButton, Separator } from "office-ui-fabric-react";
 
 export interface IPredictResultProps {
     predictions: { [key: string]: any };
@@ -36,9 +36,16 @@ export default class PredictResult extends React.Component<IPredictResultProps, 
 
         return (
             <div>
-                <div className="prediction-header">
-                    <h5 className="prediction-header-result">Result:</h5>
-                    <PrimaryButton
+                <h5>Analysis results</h5>
+                <div className="prediction-field-header">
+                    <h6 className="prediction-field-header-field"> Page # / Field name / Value</h6>
+                    <h6 className="prediction-field-header-confidence"> Confidence %</h6>
+                </div>
+                <div className="prediction-header-clear"></div>
+
+                {items.map((item: any, key) => this.renderItem(item, key))}
+                <Separator />
+                <PrimaryButton
                         className="prediction-header-download"
                         theme={getPrimaryGreenTheme()}
                         type="button"
@@ -46,14 +53,6 @@ export default class PredictResult extends React.Component<IPredictResultProps, 
                         onClick={this.triggerDownload}>
                         Download result (JSON)
                     </PrimaryButton>
-                </div>
-                <div className="prediction-field-header">
-                    <h6 className="prediction-field-header-field"> Field </h6>
-                    <h6 className="prediction-field-header-confidence"> Confidence </h6>
-                </div>
-                <div className="prediction-header-clear"></div>
-
-                {items.map((item: any, key) => this.renderItem(item, key))}
             </div>
         );
     }
@@ -69,7 +68,7 @@ export default class PredictResult extends React.Component<IPredictResultProps, 
                 onMouseLeave={() => this.onPredictionMouseLeave(item)}>
                 <li className="predictiontag-item" style={style}>
                     <div className={"predictiontag-color"}>
-                        <span>P. {item.page}</span>
+                        <span>{item.page}</span>
                     </div>
                     <div className={"predictiontag-content"}>
                         {this.getPredictionTagContent(item)}
